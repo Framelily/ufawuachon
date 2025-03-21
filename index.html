@@ -8,29 +8,133 @@
 
 	<link rel="stylesheet" href="/font/font.css" />
 	<link rel="stylesheet" href="/style.css" />
+	<link rel="stylesheet" href="/slide-ads.css" />
 	<script src="https://cdn.tailwindcss.com"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
-	<div class="container-mobile">
-		<header>
-			<img src="./images/btn-home.svg" alt="home">
-			<img src="./images/logo.svg" alt="logo">
-			<img src="./images/btn-logout.svg" alt="logout">
-		</header>
-		<img src="./images/vector-line.svg" alt="line" class="mx-auto">
-		<div class="menu">
-			<div class="item">
-				<div class="content">
-					<img src="./images/icon-history.svg" alt="history">
-					<p>ประวัติ</p>
+	<div class="bg-main">
+		<div class="frame-main">
+			<div class="frame-header">
+				<header>
+					<img src="./images/btn-home.svg" alt="home">
+					<img src="./images/logo.svg" alt="logo">
+					<img src="./images/btn-logout.svg" alt="logout">
+				</header>
+				<img src="./images/vector-line.svg" alt="line" class="mx-auto">
+			</div>
+			<div class="pb-[130px]">
+				<div class="menu">
+					<div class="grid grid-cols-2 gap-4">
+						<div class="item balance">
+							<div class="content p-3">
+								<div class="flex justify-between w-full">
+									<img src="./images/icon-user.svg" alt="user" class="w-4">
+									<img src="./images/icon-refresh.svg" alt="refresh" class="cursor-pointer">
+								</div>
+								<p class="!mt-2 font-bold">ufaa911hoa16342</p>
+								<p class="font-bold !text-[16px] !text-white mt-1">1,000,000.93</p>
+							</div>
+						</div>
+						<div class="grid grid-cols-2 gap-4">
+							<div class="item special">
+								<div class="content">
+									<img src="./images/icon-deposit-b.svg" alt="deposit">
+									<p>ฝากเงิน</p>
+								</div>
+							</div>
+							<div class="item special">
+								<div class="content">
+									<img src="./images/icon-withdrawal-b.svg" alt="withdrawal">
+									<p>ถอนเงิน</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid grid-cols-4 gap-4">
+						<div class="item">
+							<div class="content">
+								<img src="./images/icon-history.svg" alt="history">
+								<p>ประวัติ</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="content">
+								<img src="./images/icon-line.svg" alt="line">
+								<p>ติดต่อเรา</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="content">
+								<img src="./images/icon-password.svg" alt="password">
+								<p>เปลี่ยนรหัส</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="content">
+								<img src="./images/icon-user.svg" alt="user">
+								<p>โปรไฟล์</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slide-ads">
+					<div class="swiper-ads">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="/images/slide-1.png" alt="slide">
+							</div>
+							<div class="swiper-slide">
+								<img src="/images/slide-1.png" alt="slide">
+							</div>
+							<div class="swiper-slide">
+								<img src="/images/slide-1.png" alt="slide">
+							</div>
+							<div class="swiper-slide">
+								<img src="/images/slide-1.png" alt="slide">
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-menu">
+				<div class="item">
+					<img src="./images/icon-home.svg" alt="home">
+					<p>หน้าหลัก</p>
+				</div>
+				<div class="item">
+					<img src="./images/icon-deposit.svg" alt="deposit">
+					<p>ฝาก</p>
+				</div>
+				<div class="item">
+					<img src="./images/icon-play.svg" alt="play" class="absolute top-[-50px]">
+					<p>เข้าเล่น</p>
+				</div>
+				<div class="item">
+					<img src="./images/icon-withdrawal.svg" alt="withdrawal">
+					<p>ถอน</p>
+				</div>
+				<div class="item">
+					<img src="./images/icon-line.svg" alt="home" class="w-6">
+					<p>ติดต่อเรา</p>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<script>
-
-		</script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<script>
+		var swiperads = new Swiper(".swiper-ads", {
+			slidesPerView: 1,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+		});
+	</script>
 </body>
 
 </html>
