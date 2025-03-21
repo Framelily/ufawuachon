@@ -16,7 +16,7 @@ body {
   .bg-main {
     display: grid;
     grid-template-rows: 1fr auto;
-    min-width: 390px;
+    min-width: 428px;
     max-width: 576px;
     background-color: #f5f8ff;
     height: 100dvh;
