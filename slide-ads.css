@@ -24,10 +24,6 @@
     border-radius: 50% !important;
     background: #343434 !important;
     opacity: 1 !important;
-
-    @media (max-width: 767px) {
-      width: 20px !important;
-    }
   }
 
   .swiper-pagination-bullet-active {
@@ -36,27 +32,5 @@
       #8b6832 0.02%,
       #fcdd9a 99.98%
     ) !important;
-  }
-
-  .swiper-slide-active {
-    .item-news-bg {
-      scale: 1.1;
-
-      @media (max-width: 767px) {
-        scale: 1;
-      }
-
-      .detail {
-        .title {
-          font-size: 36px;
-          line-height: 36px;
-
-          @media (max-width: 767px) {
-            font-size: 28px;
-            line-height: 28px;
-          }
-        }
-      }
-    }
   }
 }
