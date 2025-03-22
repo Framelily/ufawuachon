@@ -122,19 +122,166 @@
 					<p>ติดต่อเรา</p>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-	<script>
-		var swiperads = new Swiper(".swiper-ads", {
-			slidesPerView: 1,
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-			},
-		});
-	</script>
+			<div class="bg-modal"></div>
+			<div class="modal register">
+				<div class="close">
+					<img src="./images/icon-close.svg" alt="close">
+				</div>
+				<div class="content">
+					<img src="./images/logo.svg" alt="logo" class="mx-auto my-6">
+					<p class="title mb-6">สมัครสมาชิก</p>
+					<div class="form">
+						<label>เบอร์โทรศัพท์</label>
+						<div class="border-input">
+							<input type="text" placeholder="กรอกเบอร์โทรศัพท์">
+						</div>
+
+						<label>รหัสผ่าน</label>
+						<div class="border-input">
+							<input type="password" placeholder="กรอกรหัสผ่าน">
+						</div>
+
+						<label>ชื่อ-นามสกุล</label>
+						<div class="border-input">
+							<input type="text" placeholder="กรอกชื่อ-นามสกุล">
+						</div>
+
+						<label>ธนาคาร</label>
+						<div class="border-input">
+							<select>
+								<option class="flex items-center gap-2">
+									<img src="./images/icon-bank-kasikorn.svg" alt="icon-bank">
+									<span>Kasikorn Bank</span>
+								</option>
+							</select>
+						</div>
+
+						<label>เลขบัญชี</label>
+						<div class="border-input">
+							<input type="text" placeholder="กรอกเลขบัญชี">
+						</div>
+
+						<div class="border-btn-primary">
+							<button class="btn btn-primary">สมัครสมาชิก</button>
+						</div>
+
+						<div class="flex justify-center items-center">
+							<span class="btn">มีบัญชีแล้ว?</span>
+							<button class="btn btn-primary-outline">
+								เข้าสู่ระบบ
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal success">
+				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
+				<div class="title mb-2">สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">สมัครสมาชิกสำเร็จ</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal alert phone">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">พบปัญหาในการสมัครสมาชิก</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">เบอร์โทรศัพท์ต้องมี 10 หลัก</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">ตกลง</button>
+				</div>
+			</div>
+
+			<div class="modal alert phone-register">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">พบปัญหาในการสมัครสมาชิก</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">เบอร์โทรศัพท์นี้ถูกใช้งานแล้ว</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">ตกลง</button>
+				</div>
+			</div>
+
+			<div class="modal alert bank">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">พบปัญหาในการสมัครสมาชิก</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">เลขบัญชีนี้ถูกใชงานแล้ว</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">ตกลง</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<script>
+			var swiperads = new Swiper(".swiper-ads", {
+				slidesPerView: 1,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			});
+		</script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const bgModal = document.querySelector(".bg-modal");
+				const registerModal = document.querySelector(".modal.register");
+				const successModal = document.querySelector(".modal.success");
+				const alertPhoneModal = document.querySelector(".modal.alert.phone");
+				const alertPhoneRegisterModal = document.querySelector(".modal.alert.phone-register");
+				const alertBankModal = document.querySelector(".modal.alert.bank");
+				const closeButton = document.querySelector(".close");
+				const okButton = document.querySelector(".ok");
+
+				const params = new URLSearchParams(window.location.search);
+
+				// ตรวจสอบ URL ว่ามี ?register=true หรือไม่
+				if (params.get("register") === "true") {
+					bgModal.classList.add("open");
+					registerModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?success=true หรือไม่
+				if (params.get("success") === "true") {
+					bgModal.classList.add("open");
+					successModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertphone=true หรือไม่
+				if (params.get("alertphone") === "true") {
+					bgModal.classList.add("open");
+					alertPhoneModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertphoneregister=true หรือไม่
+				if (params.get("alertphoneregister") === "true") {
+					bgModal.classList.add("open");
+					alertPhoneRegisterModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertbank=true หรือไม่
+				if (params.get("alertbank") === "true") {
+					bgModal.classList.add("open");
+					alertBankModal.classList.add("open");
+				}
+
+				// Event ปิด modal
+				closeButton.addEventListener("click", function () {
+					bgModal.classList.remove("open");
+					registerModal.classList.remove("open");
+				});
+
+				okButton.addEventListener("click", function () {
+					bgModal.classList.remove("open");
+					successModal.classList.remove("open");
+					alertPhoneModal.classList.remove("open");
+					alertPhoneRegisterModal.classList.remove("open");
+					alertBankModal.classList.remove("open");
+				});
+			});
+		</script>
 </body>
 
 </html>
