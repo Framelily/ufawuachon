@@ -25,7 +25,7 @@
 				</header>
 				<img src="./images/vector-line.svg" alt="line" class="mx-auto">
 			</div>
-			<div class="pb-[130px]">
+			<div class="content-body">
 				<div class="menu">
 					<div class="grid grid-cols-2 gap-4">
 						<div class="item balance">
@@ -66,7 +66,7 @@
 								<p>ติดต่อเรา</p>
 							</div>
 						</div>
-						<div class="item">
+						<div class="item click-change-pass">
 							<div class="content">
 								<img src="./images/icon-password.svg" alt="password">
 								<p>เปลี่ยนรหัส</p>
@@ -133,32 +133,64 @@
 					<p class="title mb-6">สมัครสมาชิก</p>
 					<div class="form">
 						<label>เบอร์โทรศัพท์</label>
-						<div class="border-input">
+						<div class="border-input icon-input">
+							<img src="./images/icon-user.svg" alt="phone" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
 							<input type="text" placeholder="กรอกเบอร์โทรศัพท์">
 						</div>
 
 						<label>รหัสผ่าน</label>
-						<div class="border-input">
+						<div class="border-input icon-input">
+							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
 							<input type="password" placeholder="กรอกรหัสผ่าน">
 						</div>
 
 						<label>ชื่อ-นามสกุล</label>
-						<div class="border-input">
+						<div class="border-input icon-input">
+							<img src="./images/icon-user.svg" alt="phone" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
 							<input type="text" placeholder="กรอกชื่อ-นามสกุล">
 						</div>
 
 						<label>ธนาคาร</label>
 						<div class="border-input">
-							<select>
-								<option class="flex items-center gap-2">
-									<img src="./images/icon-bank-kasikorn.svg" alt="icon-bank">
-									<span>Kasikorn Bank</span>
-								</option>
-							</select>
+							<div class="relative w-full">
+								<!-- Button -->
+								<button id="dropdown-btn"
+									class="w-full h-[46px] bg-[#111111E5] rounded-[14px] px-2 py-2 flex items-center justify-between">
+									<div class="flex items-center gap-2">
+										<img id="selected-img" src="./images/icon-bank-kasikorn.svg" alt="selected" class="w-6 h-6">
+										<span id="selected-text" class="text-white text-[14px]">Kasikorn Bank 1</span>
+									</div>
+									<img src="./images/icon-dropdown.svg" alt="dropdown">
+								</button>
+
+								<!-- Dropdown -->
+								<ul id="dropdown-list" class="absolute z-10 mt-1 w-full bg-[#111111E5] shadow hidden">
+									<li
+										class="dropdown-item flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-[#3e3e3e] text-white text-[14px]"
+										data-name="Kasikorn Bank 1" data-img="./images/icon-bank-kasikorn.svg">
+										<img src="./images/icon-bank-kasikorn.svg" class="w-6 h-6" alt="">
+										Kasikorn Bank 1
+									</li>
+									<li
+										class="dropdown-item flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-[#3e3e3e] text-white text-[14px]"
+										data-name="Kasikorn Bank 2" data-img="./images/icon-bank-kasikorn.svg">
+										<img src="./images/icon-bank-kasikorn.svg" class="w-6 h-6" alt="">
+										Kasikorn Bank 2
+									</li>
+									<li
+										class="dropdown-item flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-[#3e3e3e] text-white text-[14px]"
+										data-name="Kasikorn Bank 3" data-img="./images/icon-bank-kasikorn.svg">
+										<img src="./images/icon-bank-kasikorn.svg" class="w-6 h-6" alt="">
+										Kasikorn Bank 3
+									</li>
+
+								</ul>
+							</div>
 						</div>
 
 						<label>เลขบัญชี</label>
-						<div class="border-input">
+						<div class="border-input icon-input">
+							<img src="./images/icon-user.svg" alt="phone" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
 							<input type="text" placeholder="กรอกเลขบัญชี">
 						</div>
 
@@ -176,10 +208,102 @@
 				</div>
 			</div>
 
+			<div class="modal login">
+				<div class="close">
+					<img src="./images/icon-close.svg" alt="close">
+				</div>
+				<div class="content">
+					<img src="./images/logo.svg" alt="logo" class="mx-auto my-6">
+					<p class="title mb-6">เข้าสู่ระบบ</p>
+					<div class="form">
+						<label>เบอร์โทรศัพท์</label>
+						<div class="border-input icon-input">
+							<img src="./images/icon-user.svg" alt="phone" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
+							<input type="text" placeholder="กรอกเบอร์โทรศัพท์">
+						</div>
+
+						<label>รหัสผ่าน</label>
+						<div class="border-input icon-input">
+							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
+							<input type="password" placeholder="กรอกรหัสผ่าน">
+						</div>
+
+						<div class="border-btn-primary">
+							<button class="btn btn-primary">เข้าสู่ระบบ</button>
+						</div>
+
+						<a class="block underline text-right text-white text-[14px] mb-6 cursor-pointer">ลืมรหัสผ่าน?</a>
+
+						<div class="flex justify-center items-center">
+							<span class="btn">ยังไม่มีบัญชี?</span>
+							<button class="btn btn-primary-outline">
+								สมัครสมาชิก
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal change-pass">
+				<div class="flex justify-between items-center mb-6">
+					<p class="text-[16px] font-bold text-white">เปลี่ยนรหัสผ่าน</p>
+					<div class="close">
+						<img src="./images/icon-close.svg" alt="close">
+					</div>
+				</div>
+				<div class="content">
+					<div class="form">
+
+						<label>กรอกรหัสผ่านเก่า</label>
+						<div class="border-input icon-input">
+							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
+							<input type="password" placeholder="กรอกกรอกรหัสผ่านเก่า">
+						</div>
+
+						<label>กรอกรหัสผ่านใหม่</label>
+						<div class="border-input icon-input !mb-2">
+							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
+							<input type="password" placeholder="กรอกกรอกรหัสผ่านใหม่">
+						</div>
+						<p class="relative text-[#34C401] text-[12px] mb-6 before:content-['•'] before:mr-1 before:text-[#34C401]">
+							รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร
+						</p>
+
+						<label>กรอกรหัสผ่านใหม่อีกครั้ง</label>
+						<div class="border-input icon-input">
+							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
+							<input type="password" placeholder="กรอกกรอกรหัสผ่านใหม่อีกครั้ง">
+						</div>
+
+						<div class="border-btn-primary">
+							<button class="btn btn-primary">เปลี่ยนรหัสผ่าน</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="modal success">
 				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
 				<div class="title mb-2">สำเร็จ</div>
 				<p class="text-[14px] text-[#FFE161] text-center mb-6">สมัครสมาชิกสำเร็จ</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal success-login">
+				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
+				<div class="title mb-2">สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">เข้าสู่ระบบสำเร็จ</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal alert login">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">เข้าสู่ระบบไม่สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">เบอร์โทรศัพท์หรือรหัสผ่านไม่ถูกต้อง</p>
 				<div class="border-btn-primary !w-[150px]">
 					<button class="btn btn-primary ok">OK</button>
 				</div>
@@ -211,6 +335,24 @@
 					<button class="btn btn-primary ok">ตกลง</button>
 				</div>
 			</div>
+
+			<div class="modal alert pass-match">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">พบปัญหาในการเปลี่ยนรหัสผ่าน</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">รหัสผ่านไม่ตรงกัน</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal alert pass-condition">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">พบปัญหาในการเปลี่ยนรหัสผ่าน</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -224,16 +366,54 @@
 			});
 		</script>
 
+		<script defer>
+			document.addEventListener('DOMContentLoaded', () => {
+				const dropdownBtn = document.getElementById('dropdown-btn');
+				const dropdownList = document.getElementById('dropdown-list');
+				const dropdownItems = document.querySelectorAll('.dropdown-item');
+				const selectedText = document.getElementById('selected-text');
+				const selectedImg = document.getElementById('selected-img');
+
+				dropdownBtn.addEventListener('click', () => {
+					dropdownList.classList.toggle('hidden');
+				});
+
+				dropdownItems.forEach(item => {
+					item.addEventListener('click', () => {
+						const name = item.getAttribute('data-name');
+						const img = item.getAttribute('data-img');
+						selectedText.textContent = name;
+						selectedImg.src = img;
+						dropdownList.classList.add('hidden');
+					});
+				});
+
+				document.addEventListener('click', (e) => {
+					if (!dropdownBtn.contains(e.target) && !dropdownList.contains(e.target)) {
+						dropdownList.classList.add('hidden');
+					}
+				});
+			});
+		</script>
+
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
 				const bgModal = document.querySelector(".bg-modal");
 				const registerModal = document.querySelector(".modal.register");
+				const loginModal = document.querySelector(".modal.login");
 				const successModal = document.querySelector(".modal.success");
+				const successLoginModal = document.querySelector(".modal.success-login");
+				const alertLoginModal = document.querySelector(".modal.alert.login");
 				const alertPhoneModal = document.querySelector(".modal.alert.phone");
 				const alertPhoneRegisterModal = document.querySelector(".modal.alert.phone-register");
 				const alertBankModal = document.querySelector(".modal.alert.bank");
-				const closeButton = document.querySelector(".close");
-				const okButton = document.querySelector(".ok");
+				const alertPassMatchModal = document.querySelector(".modal.alert.pass-match");
+				const alertPassConditionModal = document.querySelector(".modal.alert.pass-condition");
+				const closeButtons = document.querySelectorAll(".close");
+				const okButtons = document.querySelectorAll(".ok");
+				const clickChangePass = document.querySelector(".click-change-pass");
+				const changePassModal = document.querySelector(".modal.change-pass");
+
 
 				const params = new URLSearchParams(window.location.search);
 
@@ -243,10 +423,28 @@
 					registerModal.classList.add("open");
 				}
 
+				// ตรวจสอบ URL ว่ามี ?login=true หรือไม่
+				if (params.get("login") === "true") {
+					bgModal.classList.add("open");
+					loginModal.classList.add("open");
+				}
+
 				// ตรวจสอบ URL ว่ามี ?success=true หรือไม่
 				if (params.get("success") === "true") {
 					bgModal.classList.add("open");
 					successModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?successlogin=true หรือไม่
+				if (params.get("successlogin") === "true") {
+					bgModal.classList.add("open");
+					successLoginModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertlogin=true หรือไม่
+				if (params.get("alertlogin") === "true") {
+					bgModal.classList.add("open");
+					alertLoginModal.classList.add("open");
 				}
 
 				// ตรวจสอบ URL ว่ามี ?alertphone=true หรือไม่
@@ -267,18 +465,44 @@
 					alertBankModal.classList.add("open");
 				}
 
-				// Event ปิด modal
-				closeButton.addEventListener("click", function () {
-					bgModal.classList.remove("open");
-					registerModal.classList.remove("open");
+				// ตรวจสอบ URL ว่ามี ?alertpassmatch=true หรือไม่
+				if (params.get("alertpassmatch") === "true") {
+					bgModal.classList.add("open");
+					alertPassMatchModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertpasscondition=true หรือไม่
+				if (params.get("alertpasscondition") === "true") {
+					bgModal.classList.add("open");
+					alertPassConditionModal.classList.add("open");
+				}
+
+				clickChangePass.addEventListener("click", function () {
+					bgModal.classList.add("open");
+					changePassModal.classList.add("open");
 				});
 
-				okButton.addEventListener("click", function () {
-					bgModal.classList.remove("open");
-					successModal.classList.remove("open");
-					alertPhoneModal.classList.remove("open");
-					alertPhoneRegisterModal.classList.remove("open");
-					alertBankModal.classList.remove("open");
+				closeButtons.forEach(function (closeButton) {
+					closeButton.addEventListener("click", function () {
+						bgModal.classList.remove("open");
+						registerModal.classList.remove("open");
+						loginModal.classList.remove("open");
+						changePassModal.classList.remove("open");
+					});
+				});
+
+				okButtons.forEach(function (okButton) {
+					okButton.addEventListener("click", function () {
+						bgModal.classList.remove("open");
+						successModal.classList.remove("open");
+						successLoginModal.classList.remove("open");
+						alertLoginModal.classList.remove("open");
+						alertPhoneModal.classList.remove("open");
+						alertPhoneRegisterModal.classList.remove("open");
+						alertBankModal.classList.remove("open");
+						alertPassMatchModal.classList.remove("open");
+						alertPassConditionModal.classList.remove("open");
+					});
 				});
 			});
 		</script>
