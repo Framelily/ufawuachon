@@ -34,8 +34,8 @@
 									<img src="./images/icon-user.svg" alt="user" class="w-4">
 									<img src="./images/icon-refresh.svg" alt="refresh" class="cursor-pointer">
 								</div>
-								<p class="!mt-2 font-bold">ufaa911hoa16342</p>
-								<p class="font-bold !text-[16px] !text-white mt-1">1,000,000.93</p>
+								<p class="!mt-2 font-semibold">ufaa911hoa16342</p>
+								<p class="font-semibold !text-[16px] !text-white mt-1">1,000,000.93</p>
 							</div>
 						</div>
 						<div class="grid grid-cols-2 gap-4">
@@ -54,7 +54,7 @@
 						</div>
 					</div>
 					<div class="grid grid-cols-4 gap-4">
-						<div class="item">
+						<div class="item click-history">
 							<div class="content">
 								<img src="./images/icon-history.svg" alt="history">
 								<p>ประวัติ</p>
@@ -72,7 +72,7 @@
 								<p>เปลี่ยนรหัส</p>
 							</div>
 						</div>
-						<div class="item">
+						<div class="item click-profile">
 							<div class="content">
 								<img src="./images/icon-user.svg" alt="user">
 								<p>โปรไฟล์</p>
@@ -123,7 +123,7 @@
 				</div>
 			</div>
 
-			<div class="bg-modal"></div>
+			<div class="bg-modal open"></div>
 			<div class="modal register">
 				<div class="close">
 					<img src="./images/icon-close.svg" alt="close">
@@ -246,7 +246,7 @@
 
 			<div class="modal change-pass">
 				<div class="flex justify-between items-center mb-6">
-					<p class="text-[16px] font-bold text-white">เปลี่ยนรหัสผ่าน</p>
+					<p class="text-[16px] font-semibold text-white">เปลี่ยนรหัสผ่าน</p>
 					<div class="close">
 						<img src="./images/icon-close.svg" alt="close">
 					</div>
@@ -279,6 +279,147 @@
 							<button class="btn btn-primary">เปลี่ยนรหัสผ่าน</button>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="modal profile">
+				<div class="flex justify-between items-center mb-6">
+					<p class="text-[16px] font-semibold text-white">บัญชีผู้ใช้</p>
+					<div class="close">
+						<img src="./images/icon-close.svg" alt="close">
+					</div>
+				</div>
+				<div class="content">
+					<div class="balance-profile">
+						<p class="text-[12px] text-[#FBDEB2] top-[3%] absolute flex w-full justify-center">ยอดเงินคงเหลือ</p>
+						<p class="text-[16px] font-semibold text-white top-[12%] absolute flex w-full justify-center">1,000,000.93
+						</p>
+						<img src="./images/bg-profile.png" alt="bg profile" class="bg-profile">
+						<img src="./images/icon-profile.svg" alt="profile" class="icon-pofile">
+						<div class="border-btn-primary w-[30%] absolute top-[72%] rounded-[14px]">
+							<button class="btn btn-primary rounded-[14px] px-1">
+								<img src="./images/icon-deposit-b.svg" alt="deposit" class="w-6">
+								ฝากเงิน
+							</button>
+						</div>
+						<div class="border-btn-primary w-[30%] absolute top-[72%] right-0 rounded-[14px]">
+							<button class="btn btn-primary rounded-[14px] px-1">
+								<img src="./images/icon-withdrawal-b.svg" alt="withdrawal" class="w-6">
+								ถอนเงิน
+							</button>
+						</div>
+					</div>
+					<div class="info-profile">
+						<p class="text-[14px] text-white text-center">ข้อมูลบัญชี</p>
+						<div class="item-info mt-6">
+							<p>ชื่อ</p>
+							<p>manee meetung</p>
+						</div>
+						<div class="item-info">
+							<p>ยูสเซอร์เนม</p>
+							<p>ufaa911hoa16342</p>
+						</div>
+						<div class="item-info">
+							<p>เบอร์โทร</p>
+							<p>0999998789</p>
+						</div>
+						<div class="item-info">
+							<p>ธนาคาร</p>
+							<p>ธนาคารกสิกรไทย</p>
+						</div>
+						<div class="item-info border-0">
+							<p>หมายเลขบัญชี</p>
+							<p>1132239686</p>
+						</div>
+
+						<div class="border-btn-primary mt-6 mb-0 close">
+							<button class="btn btn-primary">ยืนยัน</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal history open">
+				<div class="flex justify-between items-center mb-6">
+					<p class="text-[16px] font-semibold text-white">ประวัติการเงิน</p>
+					<div class="close">
+						<img src="./images/icon-close.svg" alt="close">
+					</div>
+				</div>
+				<div class="content">
+					<div class="tabs-history">
+						<div class="tab-item active">ฝากเงิน</div>
+						<div class="tab-item">ถอนเงิน</div>
+						<div class="tab-item">โบนัส</div>
+					</div>
+
+					<table class="table-history">
+						<thead>
+							<tr>
+								<th>
+									<p class="!text-left">วันที่</p>
+								</th>
+								<th>สถานะ</th>
+								<th>จำนวนเงิน (บาท)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<p>25 Feb 25 <br> 05:04 PM (Tue)</p>
+								</td>
+								<td>
+									<img src="/images/icon-baht.svg" alt="baht" class="mx-auto">
+									<p class="text-[10px] text-center">อนุมัติรายการแล้ว <br> รอการโอน</p>
+								</td>
+								<td>
+									<p class="text-right">100.96 ฿</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>24 Feb 25 <br> 07:42 PM (Mon)</p>
+								</td>
+								<td>
+									<img src="/images/icon-check.svg" alt="check" class="mx-auto">
+									<p class="text-[10px] text-center !text-[#34C401]">รายการเสร็จสิ้นแล้ว</p>
+								</td>
+								<td>
+									<p class="text-right">100.32 ฿</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>19 Feb 25 <br> 03:15 PM (Wed)</p>
+								</td>
+								<td>
+									<img src="/images/icon-time.svg" alt="time" class="mx-auto">
+									<p class="text-[10px] text-center !text-[#FABA32]">รอดำเนินการ</p>
+								</td>
+								<td>
+									<p class="text-right">100 ฿</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p>19 Feb 25 <br> 03:15 PM (Wed)</p>
+								</td>
+								<td>
+									<img src="/images/icon-cancel-r.svg" alt="time" class="mx-auto">
+									<p class="text-[10px] text-center !text-[#FF4D4F]">ถูกยกเลิก</p>
+								</td>
+								<td>
+									<p class="text-right">100 ฿</p>
+								</td>
+							</tr>
+							<tr style="display: none;">
+								<td colspan="3" class="!border-0">
+									<img src="./images/icon-empty.svg" alt="empty" class="mx-auto mb-2">
+									<p class="text-[10px] text-center text-white">ยังไม่มีประวัติการทำรายการ</p>
+								</td>
+							</tr>
+						<tbody>
+					</table>
 				</div>
 			</div>
 
@@ -397,6 +538,44 @@
 		</script>
 
 		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const tabItems = document.querySelectorAll('.tab-item');
+				const tableRows = document.querySelectorAll('.table-history tbody tr');
+				const emptyRow = document.querySelector('.table-history tbody tr:last-child');
+
+				tabItems.forEach((tab) => {
+					tab.addEventListener('click', () => {
+						// toggle active class
+						tabItems.forEach(t => t.classList.remove('active'));
+						tab.classList.add('active');
+
+						const tabText = tab.textContent.trim();
+
+						if (tabText === 'ถอนเงิน' || tabText === 'โบนัส') {
+							// ซ่อนทุกแถว ยกเว้น empty
+							tableRows.forEach(row => {
+								if (row !== emptyRow) {
+									row.style.display = 'none';
+								}
+							});
+							emptyRow.style.display = '';
+						} else if (tabText === 'ฝากเงิน') {
+							// แสดงทุกแถว ยกเว้น empty
+							tableRows.forEach(row => {
+								if (row === emptyRow) {
+									row.style.display = 'none';
+								} else {
+									row.style.display = '';
+								}
+							});
+						}
+					});
+				});
+			});
+		</script>
+
+
+		<script>
 			document.addEventListener("DOMContentLoaded", function () {
 				const bgModal = document.querySelector(".bg-modal");
 				const registerModal = document.querySelector(".modal.register");
@@ -413,6 +592,10 @@
 				const okButtons = document.querySelectorAll(".ok");
 				const clickChangePass = document.querySelector(".click-change-pass");
 				const changePassModal = document.querySelector(".modal.change-pass");
+				const clickProfile = document.querySelector(".click-profile");
+				const profileModal = document.querySelector(".modal.profile");
+				const clickHistory = document.querySelector(".click-history");
+				const historyModal = document.querySelector(".modal.history");
 
 
 				const params = new URLSearchParams(window.location.search);
@@ -482,12 +665,23 @@
 					changePassModal.classList.add("open");
 				});
 
+				clickProfile.addEventListener("click", function () {
+					bgModal.classList.add("open");
+					profileModal.classList.add("open");
+				});
+
+				clickHistory.addEventListener("click", function () {
+					bgModal.classList.add("open");
+					historyModal.classList.add("open");
+				});
+
 				closeButtons.forEach(function (closeButton) {
 					closeButton.addEventListener("click", function () {
 						bgModal.classList.remove("open");
 						registerModal.classList.remove("open");
 						loginModal.classList.remove("open");
 						changePassModal.classList.remove("open");
+						profileModal.classList.remove("open");
 					});
 				});
 
