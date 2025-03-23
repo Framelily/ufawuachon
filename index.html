@@ -40,13 +40,13 @@
 							</div>
 						</div>
 						<div class="grid grid-cols-2 gap-4">
-							<div class="item special">
+							<div class="item special click-deposit">
 								<div class="content">
 									<img src="./images/icon-deposit-b.svg" alt="deposit">
 									<p>ฝากเงิน</p>
 								</div>
 							</div>
-							<div class="item special">
+							<div class="item special click-withdraw">
 								<div class="content">
 									<img src="./images/icon-withdrawal-b.svg" alt="withdrawal">
 									<p>ถอนเงิน</p>
@@ -424,6 +424,92 @@
 				</div>
 			</div>
 
+			<div class="modal deposit">
+				<div class="flex justify-between items-center mb-6">
+					<p class="text-[16px] font-semibold text-white">ฝากเงิน</p>
+					<div class="close">
+						<img src="./images/icon-close.svg" alt="close">
+					</div>
+				</div>
+				<div class="content">
+					<div class="border-card">
+						<div class="card-bank">
+							<div class="tag">ไปที่บัญชี</div>
+							<img src="./images/card-b.svg" alt="card" class="ml-auto">
+							<div class="p-2">
+								<p class="text-[12px]">ธนาคารกสิกรไทย</p>
+								<p class="text-[16px] font-semibold">1338889088</p>
+								<p class="text-[12px]">Robert Fox</p>
+							</div>
+						</div>
+					</div>
+					<div class="border-btn-primary mt-6 mb-0 close">
+						<button class="btn btn-primary" data-copy="1338889088">
+							<img src="./images/icon-copy.svg" alt="copy">
+							คัดลอกเลขบัญชี
+						</button>
+					</div>
+					<p class="text-[12px] text-white mt-2 mb-6">ใช้บัญชีด้านล่างสำหรับการฝากเงินเท่านั้น</p>
+					<div class="rounded-[8px] p-2 bg-[#30291E]">
+						<p class="relative text-white text-[12px] mb-2 before:content-['•'] before:mr-1 before:text-white">
+							ธนาคาร : ธนาคารกสิกรไทย
+						</p>
+						<p class="relative text-white text-[12px] mb-2 before:content-['•'] before:mr-1 before:text-white">
+							ชื่อบัญชี : manee meetung
+						</p>
+						<p class="relative text-white text-[12px] before:content-['•'] before:mr-1 before:text-white">
+							เลขบัญชี : 56788905
+						</p>
+					</div>
+					<p class="text-[16px] text-white mt-6 font-semibold text-center mb-2">ฝากขั้นต่ำ 1 บาท</p>
+					<p class="text-[12px] text-white text-center">ชื่อบัญชีฝากต้องตรงกับบัญชีถอน ไม่เช่นนั้นจะถอนเงินไม่ได้</p>
+					<p class="text-[12px] text-white text-center">(ระบบจะจับคู่ยอดเงินเครดิตเข้าบัญชีท่านอัตโนมัติ)</p>
+					<div class="flex justify-center mt-2 gap-2 text-[#34C401] text-[12px]">
+						<img src="./images/icon-check-full.svg" alt="check">
+						ฟรีค่าธรรมเนียมการโอนเงินทุกธนาคาร
+					</div>
+				</div>
+			</div>
+
+			<div class="modal withdraw">
+				<div class="flex justify-between items-center mb-6">
+					<p class="text-[16px] font-semibold text-white">ถอนเงิน</p>
+					<div class="close">
+						<img src="./images/icon-close.svg" alt="close">
+					</div>
+				</div>
+				<div class="content">
+					<div class="flex justify-between items-center mb-2 h-10">
+						<p class="text-[12px] font-bold text-[#FBDEB2]">ยอดเงินคงเหลือ</p>
+						<p class="text-[16px] font-semibold text-white">1,000,000.93</p>
+					</div>
+					<div class="border-card">
+						<div class="card-bank">
+							<div class="tag">ไปที่บัญชี</div>
+							<img src="./images/card-b.svg" alt="card" class="ml-auto">
+							<div class="p-2">
+								<p class="text-[12px] text-white">ธนาคารกสิกรไทย</p>
+								<p class="text-[16px] font-semibold text-white">1338889088</p>
+								<p class="text-[12px] text-white">Robert Fox</p>
+							</div>
+						</div>
+					</div>
+					<div class="form">
+						<label class="!text-[#FBDEB2]">กรอกจำนวนเงินที่ถอน</label>
+						<div class="border-input !mb-2">
+							<input type="text" value="0">
+							<span class="suffix">บาท</span>
+						</div>
+						<p class="text-[12px] text-white mt-2 text-center mb-6">ถอนขั้นต่ำ <span
+								class="text-[#34C401] text-[12px]">100</span> บาท
+						</p>
+						<div class="border-btn-primary !mb-0">
+							<button class="btn btn-primary">ยืนยัน</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="modal success">
 				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
 				<div class="title mb-2">สำเร็จ</div>
@@ -437,6 +523,24 @@
 				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
 				<div class="title mb-2">สำเร็จ</div>
 				<p class="text-[14px] text-[#FFE161] text-center mb-6">เข้าสู่ระบบสำเร็จ</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal success-deposit">
+				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
+				<div class="title mb-2">สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">ฝากเงินสำเร็จ</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal success-withdraw">
+				<img src="./images/icon-success.svg" alt="success" class="mx-auto mb-2">
+				<div class="title mb-2">สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">รายการถอนอยู่ในระหว่างดำเนินการ</p>
 				<div class="border-btn-primary !w-[150px]">
 					<button class="btn btn-primary ok">OK</button>
 				</div>
@@ -491,6 +595,33 @@
 				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
 				<div class="title mb-2">พบปัญหาในการเปลี่ยนรหัสผ่าน</div>
 				<p class="text-[14px] text-[#FFE161] text-center mb-6">รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal alert amount">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">ไม่สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">กรุณากรอกจำนวนเงิน</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal alert balance-amount">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">ไม่สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">ยอดเงินคงเหลือไม่เพียงพอ</p>
+				<div class="border-btn-primary !w-[150px]">
+					<button class="btn btn-primary ok">OK</button>
+				</div>
+			</div>
+
+			<div class="modal alert min-amount">
+				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
+				<div class="title mb-2">ไม่สำเร็จ</div>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">ถอนขั้นต่ำ 100 บาท</p>
 				<div class="border-btn-primary !w-[150px]">
 					<button class="btn btn-primary ok">OK</button>
 				</div>
@@ -575,6 +706,37 @@
 			});
 		</script>
 
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const copyButtons = document.querySelectorAll('[data-copy]');
+
+				copyButtons.forEach(button => {
+					button.addEventListener('click', function () {
+						const textToCopy = this.getAttribute('data-copy');
+
+						// สร้าง element ชั่วคราวเพื่อคัดลอกข้อความ
+						const tempInput = document.createElement('input');
+						tempInput.value = textToCopy;
+						document.body.appendChild(tempInput);
+						tempInput.select();
+						tempInput.setSelectionRange(0, 99999); // สำหรับ mobile
+
+						try {
+							const successful = document.execCommand('copy');
+							if (successful) {
+								alert('คัดลอกสำเร็จ: ' + textToCopy);
+							} else {
+								alert('ไม่สามารถคัดลอกได้');
+							}
+						} catch (err) {
+							alert('เกิดข้อผิดพลาดในการคัดลอก');
+						}
+
+						document.body.removeChild(tempInput);
+					});
+				});
+			});
+		</script>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
@@ -583,12 +745,17 @@
 				const loginModal = document.querySelector(".modal.login");
 				const successModal = document.querySelector(".modal.success");
 				const successLoginModal = document.querySelector(".modal.success-login");
+				const successDepositModal = document.querySelector(".modal.success-deposit");
+				const successWithdrawModal = document.querySelector(".modal.success-withdraw");
 				const alertLoginModal = document.querySelector(".modal.alert.login");
 				const alertPhoneModal = document.querySelector(".modal.alert.phone");
 				const alertPhoneRegisterModal = document.querySelector(".modal.alert.phone-register");
 				const alertBankModal = document.querySelector(".modal.alert.bank");
 				const alertPassMatchModal = document.querySelector(".modal.alert.pass-match");
 				const alertPassConditionModal = document.querySelector(".modal.alert.pass-condition");
+				const alertAmountModal = document.querySelector(".modal.alert.amount");
+				const alertMinAmountModal = document.querySelector(".modal.alert.min-amount");
+				const alertBalanceAmountModal = document.querySelector(".modal.alert.balance-amount");
 				const closeButtons = document.querySelectorAll(".close");
 				const okButtons = document.querySelectorAll(".ok");
 				const clickChangePass = document.querySelector(".click-change-pass");
@@ -597,6 +764,10 @@
 				const profileModal = document.querySelector(".modal.profile");
 				const clickHistory = document.querySelector(".click-history");
 				const historyModal = document.querySelector(".modal.history");
+				const clickDeposit = document.querySelector(".click-deposit");
+				const depositModal = document.querySelector(".modal.deposit");
+				const clickWithdraw = document.querySelector(".click-withdraw");
+				const withdrawModal = document.querySelector(".modal.withdraw");
 
 
 				const params = new URLSearchParams(window.location.search);
@@ -623,6 +794,18 @@
 				if (params.get("successlogin") === "true") {
 					bgModal.classList.add("open");
 					successLoginModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?successdeposit=true หรือไม่
+				if (params.get("successdeposit") === "true") {
+					bgModal.classList.add("open");
+					successDepositModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?successWithdraw=true หรือไม่
+				if (params.get("successwithdraw") === "true") {
+					bgModal.classList.add("open");
+					successWithdrawModal.classList.add("open");
 				}
 
 				// ตรวจสอบ URL ว่ามี ?alertlogin=true หรือไม่
@@ -661,6 +844,24 @@
 					alertPassConditionModal.classList.add("open");
 				}
 
+				// ตรวจสอบ URL ว่ามี ?alertamount=true หรือไม่
+				if (params.get("alertamount") === "true") {
+					bgModal.classList.add("open");
+					alertAmountModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertminamount=true หรือไม่
+				if (params.get("alertminamount") === "true") {
+					bgModal.classList.add("open");
+					alertMinAmountModal.classList.add("open");
+				}
+
+				// ตรวจสอบ URL ว่ามี ?alertbalanceamount=true หรือไม่
+				if (params.get("alertbalanceamount") === "true") {
+					bgModal.classList.add("open");
+					alertBalanceAmountModal.classList.add("open");
+				}
+
 				clickChangePass.addEventListener("click", function () {
 					bgModal.classList.add("open");
 					changePassModal.classList.add("open");
@@ -676,6 +877,16 @@
 					historyModal.classList.add("open");
 				});
 
+				clickDeposit.addEventListener("click", function () {
+					bgModal.classList.add("open");
+					depositModal.classList.add("open");
+				});
+
+				clickWithdraw.addEventListener("click", function () {
+					bgModal.classList.add("open");
+					withdrawModal.classList.add("open");
+				});
+
 				closeButtons.forEach(function (closeButton) {
 					closeButton.addEventListener("click", function () {
 						bgModal.classList.remove("open");
@@ -684,6 +895,8 @@
 						changePassModal.classList.remove("open");
 						profileModal.classList.remove("open");
 						historyModal.classList.remove("open");
+						depositModal.classList.remove("open");
+						withdrawModal.classList.remove("open");
 					});
 				});
 
@@ -692,12 +905,17 @@
 						bgModal.classList.remove("open");
 						successModal.classList.remove("open");
 						successLoginModal.classList.remove("open");
+						successDepositModal.classList.remove("open");
+						successWithdrawModal.classList.remove("open");
 						alertLoginModal.classList.remove("open");
 						alertPhoneModal.classList.remove("open");
 						alertPhoneRegisterModal.classList.remove("open");
 						alertBankModal.classList.remove("open");
 						alertPassMatchModal.classList.remove("open");
 						alertPassConditionModal.classList.remove("open");
+						alertAmountModal.classList.remove("open");
+						alertMinAmountModal.classList.remove("open");
+						alertBalanceAmountModal.classList.remove("open");
 					});
 				});
 			});
