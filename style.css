@@ -534,3 +534,15 @@ body {
     background: linear-gradient(270deg, #171516 0%, #67655b 50%, #a99a7c 100%);
   }
 }
+
+/* สำหรับ Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* สำหรับ Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

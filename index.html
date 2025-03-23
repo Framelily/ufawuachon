@@ -136,7 +136,7 @@
 						<label>เบอร์โทรศัพท์</label>
 						<div class="border-input icon-input">
 							<img src="./images/icon-user.svg" alt="phone" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
-							<input type="text" placeholder="กรอกเบอร์โทรศัพท์">
+							<input type="number" placeholder="กรอกเบอร์โทรศัพท์">
 						</div>
 
 						<label>รหัสผ่าน</label>
@@ -201,7 +201,7 @@
 
 						<div class="flex justify-center items-center">
 							<span class="btn">มีบัญชีแล้ว?</span>
-							<button class="btn btn-primary-outline">
+							<button class="btn btn-primary-outline click-login">
 								เข้าสู่ระบบ
 							</button>
 						</div>
@@ -220,7 +220,7 @@
 						<label>เบอร์โทรศัพท์</label>
 						<div class="border-input icon-input">
 							<img src="./images/icon-user.svg" alt="phone" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
-							<input type="text" placeholder="กรอกเบอร์โทรศัพท์">
+							<input type="number" placeholder="กรอกเบอร์โทรศัพท์">
 						</div>
 
 						<label>รหัสผ่าน</label>
@@ -237,7 +237,7 @@
 
 						<div class="flex justify-center items-center">
 							<span class="btn">ยังไม่มีบัญชี?</span>
-							<button class="btn btn-primary-outline">
+							<button class="btn btn-primary-outline click-register">
 								สมัครสมาชิก
 							</button>
 						</div>
@@ -258,13 +258,13 @@
 						<label>กรอกรหัสผ่านเก่า</label>
 						<div class="border-input icon-input">
 							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
-							<input type="password" placeholder="กรอกกรอกรหัสผ่านเก่า">
+							<input type="password" placeholder="กรอกรหัสผ่านเก่า">
 						</div>
 
 						<label>กรอกรหัสผ่านใหม่</label>
 						<div class="border-input icon-input !mb-2">
 							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
-							<input type="password" placeholder="กรอกกรอกรหัสผ่านใหม่">
+							<input type="password" placeholder="กรอกรหัสผ่านใหม่">
 						</div>
 						<p class="relative text-[#34C401] text-[12px] mb-6 before:content-['•'] before:mr-1 before:text-[#34C401]">
 							รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร
@@ -273,7 +273,7 @@
 						<label>กรอกรหัสผ่านใหม่อีกครั้ง</label>
 						<div class="border-input icon-input">
 							<img src="./images/icon-password.svg" alt="password" class="absolute top-1/2 left-3 -translate-y-1/2 w-6">
-							<input type="password" placeholder="กรอกกรอกรหัสผ่านใหม่อีกครั้ง">
+							<input type="password" placeholder="กรอกรหัสผ่านใหม่อีกครั้ง">
 						</div>
 
 						<div class="border-btn-primary">
@@ -298,13 +298,13 @@
 						<img src="./images/bg-profile.png" alt="bg profile" class="bg-profile">
 						<img src="./images/icon-profile.svg" alt="profile" class="icon-pofile">
 						<div class="border-btn-primary w-[30%] absolute top-[72%] rounded-[14px]">
-							<button class="btn btn-primary rounded-[14px] px-1">
+							<button class="btn btn-primary rounded-[14px] px-1 click-deposit">
 								<img src="./images/icon-deposit-b.svg" alt="deposit" class="w-6">
 								ฝากเงิน
 							</button>
 						</div>
 						<div class="border-btn-primary w-[30%] absolute top-[72%] right-0 rounded-[14px]">
-							<button class="btn btn-primary rounded-[14px] px-1">
+							<button class="btn btn-primary rounded-[14px] px-1 click-withdraw">
 								<img src="./images/icon-withdrawal-b.svg" alt="withdrawal" class="w-6">
 								ถอนเงิน
 							</button>
@@ -497,7 +497,7 @@
 					<div class="form">
 						<label class="!text-[#FBDEB2]">กรอกจำนวนเงินที่ถอน</label>
 						<div class="border-input !mb-2">
-							<input type="text" value="0">
+							<input type="number" value="0">
 							<span class="suffix">บาท</span>
 						</div>
 						<p class="text-[12px] text-white mt-2 text-center mb-6">ถอนขั้นต่ำ <span
@@ -576,7 +576,7 @@
 			<div class="modal alert bank">
 				<img src="./images/icon-cancel.svg" alt="cancel" class="mx-auto mb-2">
 				<div class="title mb-2">พบปัญหาในการสมัครสมาชิก</div>
-				<p class="text-[14px] text-[#FFE161] text-center mb-6">เลขบัญชีนี้ถูกใชงานแล้ว</p>
+				<p class="text-[14px] text-[#FFE161] text-center mb-6">เลขบัญชีนี้ถูกใช้งานแล้ว</p>
 				<div class="border-btn-primary !w-[150px]">
 					<button class="btn btn-primary ok">ตกลง</button>
 				</div>
@@ -764,11 +764,12 @@
 				const profileModal = document.querySelector(".modal.profile");
 				const clickHistory = document.querySelector(".click-history");
 				const historyModal = document.querySelector(".modal.history");
-				const clickDeposit = document.querySelector(".click-deposit");
+				const clickDeposits = document.querySelectorAll(".click-deposit");
 				const depositModal = document.querySelector(".modal.deposit");
-				const clickWithdraw = document.querySelector(".click-withdraw");
+				const clickWithdraws = document.querySelectorAll(".click-withdraw");
 				const withdrawModal = document.querySelector(".modal.withdraw");
-
+				const clickLogin = document.querySelector(".click-login");
+				const clickRegister = document.querySelector(".click-register");
 
 				const params = new URLSearchParams(window.location.search);
 
@@ -877,14 +878,30 @@
 					historyModal.classList.add("open");
 				});
 
-				clickDeposit.addEventListener("click", function () {
-					bgModal.classList.add("open");
-					depositModal.classList.add("open");
+				clickLogin.addEventListener("click", function () {
+					registerModal.classList.remove("open");
+					loginModal.classList.add("open");
 				});
 
-				clickWithdraw.addEventListener("click", function () {
-					bgModal.classList.add("open");
-					withdrawModal.classList.add("open");
+				clickRegister.addEventListener("click", function () {
+					loginModal.classList.remove("open");
+					registerModal.classList.add("open");
+				});
+
+				clickDeposits.forEach(function (clickDeposit) {
+					clickDeposit.addEventListener("click", function () {
+						profileModal.classList.remove("open");
+						bgModal.classList.add("open");
+						depositModal.classList.add("open");
+					});
+				});
+
+				clickWithdraws.forEach(function (clickWithdraw) {
+					clickWithdraw.addEventListener("click", function () {
+						profileModal.classList.remove("open");
+						bgModal.classList.add("open");
+						withdrawModal.classList.add("open");
+					});
 				});
 
 				closeButtons.forEach(function (closeButton) {
